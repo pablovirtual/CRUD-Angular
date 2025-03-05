@@ -30,3 +30,53 @@
 </div>
 
 
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center">Listado de Productos</h2>
+          
+          <button class="btn btn-primary mb-3" (click)="addProduct()">
+            <i class="bi bi-plus-circle"></i> Agregar Producto
+          </button>
+          
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th>Precio</th>
+                  <th>Stock</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of listProducts; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ product.name }}</td>
+                  <td>{{ product.description }}</td>
+                  <td>${{ product.price }}</td>
+                  <td>{{ product.stock }}</td>
+                  <td>
+                    <button class="btn btn-info btn-sm me-2" (click)="editProduct(product.id || 0)">
+                      <i class="bi bi-pencil"></i> Editar
+                    </button>
+                    <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.id || 0)">
+                      <i class="bi bi-trash"></i> Eliminar
+                    </button>
+                  </td>
+                </tr>
+                <tr *ngIf="listProducts.length === 0">
+                  <td colspan="6" class="text-center">No hay productos registrados</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
