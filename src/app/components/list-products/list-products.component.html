@@ -1,46 +1,14 @@
-<div class="container">
-  <div class="title">
-      <h4>Listado de Productos</h4>
-      <button type="button" class="btn btn-success">Agregar Producto </button>
-    </div>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Stock</th>
-        <th scope="col"></th>
-
-      </tr>
-    </thead>
-    <tbody>
-  <tr *ngFor="let item of listProducts" class="table-active">
-  <td>{{ item.name }}</td>
-  <td>{{ item.description }}</td>
-  <td>{{ item.price }}</td>
-  <td>{{ item.stock }}</td>
-    <td>
-      <button type="button" class="btn btn-info btn-sm">Editar</button>
-      <button type="button" class="btn btn-secondary btn-sm ms-2">Borrar</button>
-    </td>
-  </tr>
-    </tbody>
-  </table>
-</div>
-
-
 <div class="container mt-5">
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
       <div class="card">
         <div class="card-body">
           <h2 class="text-center">Listado de Productos</h2>
-          
+
           <button class="btn btn-primary mb-3" (click)="addProduct()">
             <i class="bi bi-plus-circle"></i> Agregar Producto
           </button>
-          
+
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
