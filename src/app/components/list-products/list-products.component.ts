@@ -15,8 +15,8 @@ export class ListProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.listProducts = [
-      { name: 'Product 1', description: 'Description 1', price: 10, stock: 5 },
-      // ... other products
+      { name: 'Coca cola', description: 'Dieta', price: 10, stock: 5 },
+      { name: 'Corona', description: 'Light', price: 20, stock: 10 },
     ];
   }
 }
